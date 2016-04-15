@@ -11,3 +11,7 @@ ens_job_show:
     defaults: { _controller: "EnsJobeetBundle:Job:show" }
     requirements:
         id:  \d+
+
+EnsJobeetBundle_category:
+    pattern:  /category/{slug}/{page}
+    defaults: { _controller: EnsJobeetBundle:Category:show , page: 1}
