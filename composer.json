@@ -51,5 +51,8 @@
         "branch-alias": {
             "dev-master": "2.3-dev"
         }
+    },
+    "require-dev": {
+        "liip/functional-test-bundle": "^1.6"
     }
 }

@@ -70,7 +70,7 @@ dolor.sit');
         $job_expired->setIsActivated(true);
         $job_expired->setToken('job_expired');
         $job_expired->setEmail('job@example.com');
-        //$job_expired->setCreatedAt(new \DateTime('2016-04-01'));
+        $job_expired->setCreatedAt(new \DateTime('2016-03-01'));
 
         $em->persist($job_expired);
 
