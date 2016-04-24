@@ -6,7 +6,9 @@
  
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('bundles/ensjobeet/css/job.css') }}" type="text/css" media="all" />
+    {% stylesheets 'bundles/ensjobeet/css/job.css' filter='uglifycss' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}
  
 {% block content %}

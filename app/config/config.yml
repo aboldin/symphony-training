@@ -66,3 +66,11 @@ swiftmailer:
 parameters:
     max_jobs_on_homepage: 5
     max_jobs_on_category: 10
+
+assetic:
+    filters:
+        uglifyjs2:
+            # the path to the uglifyjs executable
+            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifyjs
+        uglifycss:
+            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifycss
