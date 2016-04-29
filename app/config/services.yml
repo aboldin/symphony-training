@@ -1,0 +1,20 @@
+services:
+    sonata.jobeet.admin.category:
+        class: Ens\JobeetBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Categories }
+        arguments: [null, Ens\JobeetBundle\Entity\Category, EnsJobeetBundle:CategoryAdmin]
+
+    sonata.jobeet.admin.job:
+        class: Ens\JobeetBundle\Admin\JobAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Jobs }
+        arguments: [null, Ens\JobeetBundle\Entity\Job, EnsJobeetBundle:JobAdmin]
+
+    sonata.jobeet.admin.user:
+        class: Ens\JobeetBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: jobeet, label: Users }
+        arguments: [null, Ens\JobeetBundle\Entity\User, ~]
+        calls:
+              - [setUserManager, [@fos_user.user_manager]]

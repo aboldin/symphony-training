@@ -31,3 +31,8 @@ job_show:
     defaults: { _controller: "EnsJobeetBundle:Job:show" }
     requirements:
         id:  \d+
+
+job_extend:
+    pattern:  /{token}/extend
+    defaults: { _controller: "EnsJobeetBundle:Job:extend" }
+    requirements: { _method: post }

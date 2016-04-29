@@ -13,6 +13,9 @@ class CategoryController extends Controller
 {
     public function showAction($slug, $page)
     {
+        $translated = $this->get('translator')->trans('Symfony is great');
+        var_dump($translated);
+        die();
         $em = $this->getDoctrine()->getManager();
 
         $category = $em->getRepository('EnsJobeetBundle:Category')->findOneBySlug($slug);

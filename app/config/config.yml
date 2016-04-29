@@ -1,10 +1,25 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: services.yml }
+
+
+sonata_admin:
+    title: Materniteam
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
+
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: [fr] }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -74,3 +89,14 @@ assetic:
             bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifyjs
         uglifycss:
             bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifycss
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Ens\JobeetBundle\Entity\User
